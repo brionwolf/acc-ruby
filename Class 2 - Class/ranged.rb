@@ -79,11 +79,14 @@ names.each do |var|
 end
 
 =end
-####
+######
 
 # --------------------------------------------------------------------------------------
 #hashes
 # --------------------------------------------------------------------------------------
+
+=begin
+######
 
 myHash = {"jan" => "January", "Feb" => "February"}
 
@@ -91,15 +94,21 @@ puts myHash["Jan"]
 
 myHash.each {|key,val| puts "#{key} and #{val}"}
 
+=end
+######
+
 # --------------------------------------------------------------------------------------
 #Hashes continued
 # --------------------------------------------------------------------------------------
+
+=begin
+######
 
 # regular strings are mutible, meaning they can be changed and they don't have set memory allocation
 name = "Aarai"
 name << "Myers" # add to the current string
 
-# symbols - thing strings that cannot be changed and do not take up extra space.
+# symbols - thing strings that cannot be changed and do not take up extra computer memory.
 key_name = :jan 
 
 myHash = {:jan => "January", :feb => "February"}
@@ -108,5 +117,30 @@ puts myHash[:jan]
 
 myHash.each {|key,val| puts "#{key} and #{val}"}
 
+=end
+######
+
+
+# --------------------------------------------------------------------------------------
+# Methods
+# --------------------------------------------------------------------------------------
+
+names_list = []
+
+
+def add_name names_list,name
+	names_list.push(name)
+end
+
+add_name names_list,"max"
+
+puts names_list[0]
+
+
+
+
+# --------------------------------------------------------------------------------------
+# HOME WORK
 # Create a few programs using arraysdand hashes
 # But make sure to use methods we have no discussed (look up the ruby documentation)
+# --------------------------------------------------------------------------------------
