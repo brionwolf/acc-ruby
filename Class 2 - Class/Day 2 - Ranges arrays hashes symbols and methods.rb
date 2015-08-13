@@ -1,6 +1,92 @@
-require "pry"
 # --------------------------------------------------------------------------------------
-#ranges
+# Day 2 - Ranges, Arrays, Hashes, Symbols, and Methods
+# --------------------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------------------
+# Pitch by Mr Blake from the Silicon Harlem
+# --------------------------------------------------------------------------------------
+
+=begin
+
+Mr. Blake
+Co founder of Silicon Harlem
+He is personally working on Augmented reality
+Explaining what this initiative is with these three classes
+Wants to offer more relevant courses on relevant frameworks (ie: ruby, python, node.js).
+this series of courses is a pilot.
+=end
+
+
+# require "pry"
+# binding.pry
+
+#psudo code
+
+# --------------------------------------------------------------------------------------
+#Exercise 1 - hi low
+# --------------------------------------------------------------------------------------
+
+
+# set a number
+# Ask for the number
+# Store that number in a variable
+# Check to see if the number matches
+# check if number is too hi or too low
+# let user know if they have won.
+# If they are wrong tell them if they are too hi or too low.
+# tell them to guess again.
+
+
+# set a number in a variable
+winning_number = rand(1..100)
+
+# Ask for the number
+puts "guess a number between 1 and 100"
+
+# Store that number in a variable
+guessed_number = gets.chomp.to_i
+
+# Check to see if the number matches
+while (guessed_number != winning_number)
+
+	# check if number is too hi or too low
+	# If they are wrong tell them if they are too hi or too low.
+	# tell them to guess again.
+	if (guessed_number > winning_number) 
+		puts "Too high my friend, try again."
+		guessed_number = gets.chomp.to_i
+	elsif (guessed_number < winning_number)
+		puts "too low, too slow! try again."
+		guessed_number = gets.chomp.to_i
+	end
+end
+
+# Check to see if the number matches
+# let user know if they have won.
+if (guessed_number = winning_number)
+	puts "YOU'RE CORRECT! Have a byte of a cookie, get it? Byte!"
+end
+
+# --------------------------------------------------------------------------------------
+# Exercise 1 - hi low - Alternative
+# --------------------------------------------------------------------------------------
+
+
+=begin
+
+user_wins = false
+
+while user_wins != true
+	guessed_number = gets.chomp.to_i
+	if guessed_number = winning_number
+		puts "You Win! You got it correct!"
+	elsif 
+	
+=end
+
+# --------------------------------------------------------------------------------------
+# Ranges
 # --------------------------------------------------------------------------------------
 
 =begin
@@ -82,8 +168,10 @@ end
 ######
 
 # --------------------------------------------------------------------------------------
-#hashes
+# Hashes
 # --------------------------------------------------------------------------------------
+
+# Like arrays Hashes, hold a number of items in "slots", but instead of being assiated with a number, each is associated with a "key" which can be vertually anything, like a variable.
 
 =begin
 ######
@@ -98,8 +186,10 @@ myHash.each {|key,val| puts "#{key} and #{val}"}
 ######
 
 # --------------------------------------------------------------------------------------
-#Hashes continued
+# Hashes continued
 # --------------------------------------------------------------------------------------
+
+# if you knowa key will never change, then it might be wise to use "symbols" to define each key. see below for the definition of a symbol.
 
 =begin
 ######
@@ -124,6 +214,8 @@ myHash.each {|key,val| puts "#{key} and #{val}"}
 # --------------------------------------------------------------------------------------
 # Methods
 # --------------------------------------------------------------------------------------
+
+# Methods in ruby look similar to functions, start by defining it with a name, add parameters, and then make it do a thing.
 
 names_list = []
 
