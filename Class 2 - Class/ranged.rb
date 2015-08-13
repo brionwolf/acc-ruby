@@ -127,7 +127,8 @@ myHash.each {|key,val| puts "#{key} and #{val}"}
 
 names_list = []
 
-
+# define a method: def [method name] parameters1,parameters2,...
+# parameters are defined there but act like variables IN the method.
 def add_name names_list,name
 	names_list.push(name)
 end
@@ -136,11 +137,9 @@ add_name names_list,"max"
 
 puts names_list[0]
 
-
-
-
 # --------------------------------------------------------------------------------------
 # HOME WORK
-# Create a few programs using arraysdand hashes
-# But make sure to use methods we have no discussed (look up the ruby documentation)
+# Create a few programs using arraysdand hashes.
+# But make sure to use methods we have no discussed (look up the ruby documentation).
+# Create and add a method to the program.
 # --------------------------------------------------------------------------------------
