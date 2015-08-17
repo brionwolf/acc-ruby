@@ -42,72 +42,96 @@ $year = 2015
 $age
 current_year = Time.new.year
 
-# Entrence
-=begin
+puts "-------------------------------------- LOAD PROGRAM -------------------------------------".yellow
+sleep(1)
+
+# Titles
+puts " "
 puts "-----------------------------------------------------------------------------------------".yellow
 puts "-------------------------------- Test MUD, please Ignore --------------------------------".yellow
 puts "-----------------------------------------------------------------------------------------".yellow
 sleep(1)
 puts " "
 sleep(1)
+
+# Welcome
 puts "Welcome to a world without limits!"
 sleep(2)
 puts "Except for the fact that there are only a few rooms to explore right now..."
 sleep(2)
 puts "Still, lets get started."
 sleep(2)
-=end
 
+# Questionnaire - Name
 puts "First, what is your name?"
 name = gets.chomp
+
+# Blank field check.
 while name == ""
 	puts "Sorry what was that again? Names cannot be \[blank\]."
 	name = gets.chomp
 end
 sleep(1)
+
+# Correct name check.
 puts "EXCELENT! Your name is \'#{name}\'! Is that correct?"
 puts "Type \"yes\" if it is, or \"no\" to get another chance, and press enter"
 name_correct = gets.chomp
-=begin
-if name_correct == "no"
-	puts "Too bad! Shoulda' checked your spelling!"
-end
-=end
 sleep(1)
+
+# Reset name loop.
 while name_correct == "no"
 	puts "Give it another go, What is your name?"
 	name = gets.chomp
-
-
-=begin
-$name_correct = false
-while name_correct = false
-	puts "EXCELENT! Your name is \'#{name}\'! Is that correct?"
+	puts "EXCELENT! Your name is now \'#{name}\'! Is that correct?"
 	sleep(1)
-	puts "Type \"yes\" if it is, or \"no\" to get another chance, and press enter"
-	name_answer = gets.chomp
-	if name_answer = "yes"
-		name_correct = true
-	else
-		sleep(1.5)
-		puts "Give it another go. What is your name?"
-		name = gets.chomp
-	end
+	puts "Type \"yes\" if it is, or \"no\" if it isn't, and press enter"
+	name_correct = gets.chomp
 end
-=end
-
 puts " "
 sleep(1)
+
+# Record and check age
 puts "GREAT!"
 sleep(1)
 puts "So, #{name}, what year were you born?"
 sleep(1)
 puts "(This is important for strategic sheep purposes...)"
 year = gets.chomp.to_i
-age = 2015 - year
+age = 2015 - year # Calculate age
 sleep(1.5)
 
-if year <= current_year-13 #currently should be 2002
+# If user's age calculates to 0 or less.
+if year >= current_year
+	puts "I don't even know how you're using a computer right now."
+	sleep(1.5)
+	puts "It's like you were born yesterday!"
+	sleep(1.5)
+	puts "How is that possible?!"
+	sleep(1.5)
+	puts "Do we need to call Dr. Kinder from BabyCo?"
+	sleep(2)
+	puts "..."
+	sleep(1.5)
+	puts "Sorry, bad joke."
+	sleep(1.5)
+	puts "Restart the program and try again you must have made a mistake in entering your birth year."
+	sleep(3)
+	puts " "
+	puts "-------------------------------------- END PROGRAM --------------------------------------".yellow
+	puts " "
+
+# If user's age is between 13 and 1
+elsif year > current_year-13 && year < current_year
+	puts "glad to know you're getting into computers and coding at the ripe young age of #{age}."
+	puts "But, legally we have to ask that you talk to your parents first."
+	puts "Come back when you get their permission."
+	puts " "
+	puts "-------------------------------------- END PROGRAM --------------------------------------".yellow
+	puts " "
+	
+# If user's age is 13 or greater	
+elsif year <= current_year-13
 	puts "Glad to know you're #{age}, let's move on!"
 	sleep(2)
 	puts "Now that we know you're old enough for this kind of stuff..."
@@ -141,26 +165,6 @@ if year <= current_year-13 #currently should be 2002
 		puts "What do you want to do? type \"e\" to enter or type \"g\" to go away, and press enter."
 		direction = gets.chomp
 	end
-elsif year > current_year-13 && year < current_year
-	puts "Legally we have to ask that you talk to your parents first."
-elsif year >= current_year
-	puts "I don't even know how you're using a computer right now."
-	sleep(1.5)
-	puts "It's like you were born yesterday!"
-	sleep(1.5)
-	puts "How is that possible?!"
-	sleep(1.5)
-	puts "Do we need to call Dr. Kinder from BabyCo?"
-	sleep(2)
-	puts "..."
-	sleep(1.5)
-	puts "Sorry, bad joke."
-	sleep(1.5)
-	puts "restart the program and try again you must have made a mistake in entering your birth year."
-	sleep(3)
-	puts " "
-	puts "-------------------------------------- END PROGRAM --------------------------------------".red
-	puts " "
 end
 
 if name == "help" || year == "help" || direction == "help" || name_correct == "help"
