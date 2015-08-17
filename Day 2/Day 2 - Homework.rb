@@ -94,15 +94,28 @@ sleep(1)
 # Record and check age
 puts "GREAT!"
 sleep(1)
-puts "So, #{name}, what year were you born?"
+puts "So, #{name}, what year were you born? Formate: \'xxxx\'"
 sleep(1)
 puts "(This is important for strategic sheep purposes...)"
 year = gets.chomp.to_i
 age = 2015 - year # Calculate age
-sleep(1.5)
+puts " "
 
+# If user's age calculates to 0 or less or year calculates to 1000 or less.
+while year >= current_year || year <= 1000
+	puts "Are you sure to did that right?"
+	sleep(1)
+	puts "Based on your answer you're #{age} years old..."
+	sleep(1.5)
+	puts "Try entering your birth year again. Use 4 numbers \(ie. #{current_year}\)."
+	year = gets.chomp.to_i
+	age = 2015 - year
+	puts " "
+end
+
+=begin
 # If user's age calculates to 0 or less.
-if year >= current_year
+while year >= current_year
 	puts "I don't even know how you're using a computer right now."
 	sleep(1.5)
 	puts "It's like you were born yesterday!"
@@ -116,39 +129,54 @@ if year >= current_year
 	puts "Sorry, bad joke."
 	sleep(1.5)
 	puts "Restart the program and try again you must have made a mistake in entering your birth year."
-	sleep(3)
+	sleep(1.5)
+	puts " "
+	puts "-------------------------------------- END PROGRAM --------------------------------------".yellow
+	puts " "
+end
+=end
+
+sleep(1.5)
+
+# If user's age is between 13 and 1
+if year > current_year-13 && year < current_year
+	puts "I'm SO glad to know you're getting into computers and coding at the ripe young age of #{age}."
+	sleep(1.5)
+	puts "But, legally we have to ask that you talk to your parents first."
+	sleep(1.5)
+	puts "Come back when you get their permission."
+	sleep(1.5)
 	puts " "
 	puts "-------------------------------------- END PROGRAM --------------------------------------".yellow
 	puts " "
 
-# If user's age is between 13 and 1
-elsif year > current_year-13 && year < current_year
-	puts "glad to know you're getting into computers and coding at the ripe young age of #{age}."
-	puts "But, legally we have to ask that you talk to your parents first."
-	puts "Come back when you get their permission."
-	puts " "
-	puts "-------------------------------------- END PROGRAM --------------------------------------".yellow
-	puts " "
-	
 # If user's age is 13 or greater	
 elsif year <= current_year-13
-	puts "Glad to know you're #{age}, let's move on!"
-	sleep(2)
-	puts "Now that we know you're old enough for this kind of stuff..."
+	puts "Now that we know you're #{age}."
 	sleep(1)
-	puts "Lets get on with all this!"
+	puts "And old enough for this kind of stuff..."
+	sleep(1)
+	puts "Allons-y! ~~~"
 	sleep(1)
 	puts " "
 	puts "so"
 	puts " "
 	sleep(1)
-	puts "In front of you stands a very tall door. Not godly tall, but taller than a reasonable door should be.
-	Looking at it you can tell it's old, made of wood, stained to a deep red brown, and finished with thick wrought iron bands.
-	If a tall old door in the middle of nowhere wasn't weird enough, this door isn't being held up by anything.
-	There is nothing to the right or left. You can walk all the way around this door. both sides look exactly the same.
-	At what seems a perfect height, on either side of this door you find a well worn but study handle."
+	puts "In front of you stands a very tall door. Not godly tall, but taller than a reasonable door should be."
+	sleep(2)
+	puts "Looking at it you can tell it's old, made of wood, stained to a deep red brown, and finished with thick wrought iron bands."
+	sleep(2)
+	puts "If a tall old door in the middle of nowhere wasn't weird enough, this door isn't being held up by anything."
+	sleep(2)
+	puts "Like, nothing. Yeah, it's weird."
+	sleep(2)
+	puts "There is nothing to the right or left. You can walk all the way around this door."
+	sleep(2)
+	puts "both sides look exactly the same."
+	sleep(2)
+	puts "At what seems a perfect height, on either side of this door, you find a well-worn but study handle."
+	sleep(2)
 	puts "type \"e\" to enter or type \"g\" to go away, and press enter."
-	
 	direction = gets.chomp
 	
 	if direction == "e"
