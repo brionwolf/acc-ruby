@@ -829,4 +829,13 @@ a.Admin.new
 # $ rails g controller NewControllerNamePlurals newMethodName secondNewMethodName
 # rails s
 
-# _ creates a partial 
+# _creates_a_partial.html.erb - creates a partial page
+
+# in the layout application.html.erb file place the following tag to refer to the new partial.
+# 	<%= render layouts/creates_a_partial %>
+
+# Standard CRUD (Create Read Update Destroy) commands for rails
+# Show, New, Edit, Create, Update, Destroy
+
+# Colon before :this_is_a_Symbol
+# Colon After  this_is_a_hook: 
