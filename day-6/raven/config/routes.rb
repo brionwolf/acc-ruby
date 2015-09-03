@@ -1,17 +1,39 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  # You can have the root of your site routed with "root"
+  root 'static_pages#home'
+
+  # resource route with options
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  # regular route
+  get 'users/show'
+  get 'users/new'
+  get 'users/edit'
+  get 'users/create'
+  get 'users/update'
+  get 'users/destroy'
+  get 'caws/index'
+  get 'caws/create'
+  get 'caws/destroy'
+
   get 'home' => 'static_pages#home'
-
   get 'account' => 'static_pages#account'
-
   get 'about' => 'static_pages#about'
-
   get 'contact' => 'static_pages#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root 'static_pages#home'
+  resources :caws, only:[:index,:create,:destroy]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

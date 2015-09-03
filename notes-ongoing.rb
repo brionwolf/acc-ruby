@@ -839,3 +839,88 @@ a.Admin.new
 
 # Colon before :this_is_a_Symbol
 # Colon After  this_is_a_hook: 
+
+#  																				 ⧏⫷⦿⫸⧐
+# --------------------------------------------------------------------------------------
+# Day 7 - Missed class for personal situation.
+# --------------------------------------------------------------------------------------
+# 																				 ⧏⫷⦿⫸⧐
+
+#  																				 ⧏⫷⦿⫸⧐
+# --------------------------------------------------------------------------------------
+# Day 8 - Twitter Clone Continued
+# --------------------------------------------------------------------------------------
+# 																				 ⧏⫷⦿⫸⧐
+
+# ------------
+# Ruby in HTML
+# ------------
+
+# <%= stuff you want to redner to the page %>
+# <% straight ruby code that will not render, think "end" tags %>
+
+# ----------------------
+# within the routes file
+# ----------------------
+
+# if You create a resource to a controller, you can delete the get commands, as they do the same thing.
+
+# example:
+
+# get 'caws/index'
+# get 'caws/create'
+# get 'caws/destroy'
+
+# becomes:
+
+# resources :caws, only:[:index,:create,:destroy]
+
+# -------------------------
+# User controller continued
+# -------------------------
+
+# rails generate controller controllerName modelName
+
+# -----------------------------------
+# jumping into the app/helpers folder
+# -----------------------------------
+
+# Using sessionHelper file to hand code an authentication system.
+# a questionmark at the end of a method definition acts as an implicit if statement
+
+# --------------
+# suggested gems
+# --------------
+
+# Devise - authentication
+# paperclip - image attachment gem
+# service called: sendgrid, may have a gem.
+
+# ------------------------------------
+# Ruby Code - Hierarchy of abstraction
+# ------------------------------------
+
+# Module
+# Class
+# Method
+# Variable
+
+# ------
+# Models
+# ------
+
+# create a model: $ rails g model NameOfModel attribute_name:data_type
+# data types:
+# floatstext
+# string
+# decimal
+# integer
+# datetime
+# primary_key
+# boolean
+# timestamp
+# time
+# references
+# binary
+# date
+
